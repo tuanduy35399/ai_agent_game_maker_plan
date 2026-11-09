@@ -16,7 +16,9 @@ config = {
     "configurable": {"thread_id": 1}
 }
 with SqliteSaver.from_conn_string("game_memory.db") as checkpointer:
-    agent = create_agent(model=model, tools=[search_web,make_report], checkpointer= checkpointer)
+    agent = create_agent(model=model, 
+                        tools=[search_web, make_report, scrape_webpage],
+                        checkpointer= checkpointer)
 
     while True:
         content= input("You: ")
