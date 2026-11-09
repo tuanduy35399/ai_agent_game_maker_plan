@@ -25,7 +25,7 @@ def make_report(content: str, name_file: str)-> str:
     This tool use for making report .md type with content which was researched from search_web tool
     """
     print(f"Dang tao bao cao: {name_file}")
-    path = Path(f"report/{name_file}.md")
+    path = Path(f"report/{name_file}")
     path.write_text(data=content, encoding="utf-8")
 
     return f"Report is saved at {path.resolve()}"
